@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    transition: 0.2s !important;
+}
+
+:root {
+    --bs-primary: #f0a0bf;
+    --bs-primary-fade: #e9c3d2;
+    --bs-primary-hover: #cb7a8d;
+    --bs-primary-active: #e5879d;
+    --bs-primary-low: #eaa6b6;
+    --bs-primary-deep: #c18f9a;
+    --bs-primary-rgb: 29, 27, 75;
+    --placeholder-color: #F1F5F9;
+}
+
+body {
+    font-family: "Prompt", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.btn-outline-primary {
+    color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+    transform: scale(0.95);
+}
+
+.btn-primary:focus,
+.btn-outline-primary:active {
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+    transform: scale(1);
+}
+
+.btn-primary:hover {
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+    transform: scale(0.95);
+}
+
+
+.btn-primary:active {
+    background-color: var(--bs-primary-hover) !important;
+    border-color: var(--bs-primary-hover) !important;
+    transform: scale(1);
+}
+
+.btn-primary.active {
+    background-color: var(--bs-primary) !important;
+    color: white !important;
+    border: none;
+}
+
+.bg-primary {
+    background-color: var(--bs-primary) !important;
+}
+
+.btn.show {
+    background-color: var(--bs-primary-low) !important;
+}
+
+.btn.active {
+    background-color: var(--bs-primary) !important;
+    border: 1px solid var(--bs-primary-deep) !important;
+}
+
+.btn.active-size {
+    background-color: var(--bs-primary) !important;
+    border: 1px solid var(--bs-primary-deep) !important;
+    color: white;
+    transform: scale(0.9);
+}
+
+.text-primary {
+    color: var(--bs-primary) !important;
+}
+
+.form-control:focus,.form-select:focus {
+    border-color: var(--bs-primary) !important;
+    box-shadow: 0 0 0 2px var(--bs-primary-low) !important;
+}
+
+
+.nav-group-link {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    user-select: none;
+
+    & .navLink {
+        text-decoration: none;
+        color: var(--bs-primary);
+        border-radius: 1rem;
+        padding-block: 0.5rem;
+        padding-inline: 1rem;
+
+        &:hover {
+            background-color: var(--bs-primary);
+            color: white;
+            transform: scale(0.95);
+        }
+
+        &:active:not(:nth-child(2)) {
+            transform: scale(0.8);
+        }
+    }
+}
+
+.category-card {
+    position: absolute;
+    top: -40px;
+    margin: 0;
+    background-color: var(--placeholder-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    border: 1px solid var(--bs-primary-deep);
+    box-shadow: 1px 2px 5px var(--bs-primary-deep);
+    width: 250px;
+    opacity: 0;
+    transition: 0.4s !important;
+
+    & ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+
+        & .category-navlink {
+            text-decoration: none;
+            color: var(--bs-primary);
+
+            &:hover {
+                background-color: var(--bs-primary);
+                color: white;
+                padding: 0.5rem;
+                border-radius: 0.5rem;
+                padding-left: 1rem;
+            }
+
+            &:active {
+                transform: scale(0.8);
+            }
+        }
+    }
+}
+
+.category-dropdown:hover {
+    & .category-card {
+        transition: 0.5s !important;
+    }
+}
+
+.card-item-order {
+    height: 410px;
+    overflow: hidden;
+    border-radius: 1rem;
+    color: var(--bs-primary);
+    background-color: #F1F5F9;
+    transition: 0.3s ease-out !important;
+    position: relative;
+
+    &:hover {
+        box-shadow: 0px 0px 5px var(--bs-primary-deep);
+        transform: translateY(10px);
+    }
+
+    & img {
+        height: 250px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    & .addToCart {
+        display: flex;
+        gap: 0.5rem;
+        background-color: var(--bs-primary);
+        padding: 0.5rem;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        border-radius: 1rem;
+        transition: 0.3s !important;
+
+        &:hover {
+            background-color: var(--bs-primary-low);
+            transform: scale(1.05);
+        }
+    }
+}
+
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.border-radius-sweetAlert {
+    border-radius: 1rem;
+}
+
+
+.titleCardItemOrder {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.image-banner {
+    height: 500px;
+}
+
+.title-banner {
+    position: absolute;
+    color: white;
+    top: 130px;
+    left: 250px;
+}
+
+.imageShowUnderBanner {
+    height: 400px;
+}
+
+.responsive-register {
+    width: 650px;
+}
+
+.responsive-login {
+    width: 800px;
+}
+
+.responsive-admin1 {
+    height: 100vh;
+    width: 400px;
+}
+
+.responsive-admin2 {
+    white-space: wrap;
+    width: calc(100% - 400px);
+}
+
+@media only screen and (max-width: 768px) {
+    .title-banner {
+        position: absolute;
+        color: white;
+        top: 50px;
+        left: 70px;
+
+        & div {
+            font-size: 30px !important;
+            width: 200px;
+        }
+    }
+
+    .image-banner {
+        height: 300px;
+    }
+
+    .imageShowUnderBanner {
+        height: 200px;
+    }
+
+    .responsive-register {
+        width: 350px;
+        padding: 1.5rem !important;
+    }
+
+    .responsive-login {
+        width: 350px !important;
+    }
+
+    .responsive-admin1 {
+        height: auto;
+        width: auto;
+    }
+
+    .responsive-admin2 {
+        width: 100%;
+    }
+
+}

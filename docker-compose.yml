@@ -1,0 +1,36 @@
+services:
+
+  php-apache:
+    container_name: php-m2shop
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 3000:80
+    volumes:
+      - ./php/src:/var/www/html/
+
+  db:
+    container_name: mysql-m2shop
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ROOT_PASSWORD
+      MYSQL_USER: username
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: clothes_db
+      TZ: 'Asia/Bangkok'
+    ports:
+      - 9906:3306
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+
+  phpmyadmin:
+    container_name: phpmyadmin-m2shop
+    image: phpmyadmin
+    ports:
+      - 8888:80
+    environment:
+      PMA_HOST: db
+    depends_on:
+      - db
